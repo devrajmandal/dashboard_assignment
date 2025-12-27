@@ -5,7 +5,6 @@ import {
   Sliders, Download, Share2, Menu, Filter, LayoutDashboard, BarChart3
 } from 'lucide-react';
 
-// --- ATOMIC COMPONENTS ---
 const Avatar = ({ name, color, textColor = "text-white" }) => (
   <div className={`w-8 h-8 rounded-full border-2 border-white ${color} flex items-center justify-center text-[10px] font-bold ${textColor} shadow-sm uppercase`}>
     {name.split(' ').map(n => n[0]).join('')}
@@ -18,7 +17,6 @@ const MetricBadge = ({ label, color }) => (
   </div>
 );
 
-// --- SIDEBAR TREE LOGIC ---
 const TreeItem = ({ label, children, hasBadge, badgeCount, isPink, isHeader }) => (
   <div className="relative">
     <div className={`group flex items-center justify-between py-1 px-2 rounded-md hover:bg-gray-100 cursor-pointer transition-colors relative ${isHeader ? 'mt-2' : ''}`}>
@@ -35,7 +33,6 @@ const Dashboard = () => {
   return (
     <div className="flex h-screen bg-[#FDFCFD] overflow-hidden font-sans antialiased text-slate-900">
       
-      {/* --- SIDEBAR --- */}
       <aside className="w-64 bg-white border-r border-gray-100 flex flex-col flex-shrink-0">
         <div className="p-4 flex items-center gap-2 border-b border-gray-50">
           <div className="w-7 h-7 bg-black rounded flex items-center justify-center text-white text-xs font-bold">C</div>
@@ -89,10 +86,8 @@ const Dashboard = () => {
         </div>
       </aside>
 
-      {/* --- MAIN PANEL --- */}
       <main className="flex-1 overflow-auto bg-[#F8F9FB] p-8">
-        
-        {/* GLOBAL HEADER */}
+ 
         <header className="flex items-center justify-between mb-8">
           <div className="flex-1 max-w-xl relative">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-300" size={18} />
@@ -110,7 +105,6 @@ const Dashboard = () => {
           </div>
         </header>
 
-        {/* REPORT TITLE BAR */}
         <div className="flex items-center justify-between mb-8">
           <h1 className="text-5xl font-bold text-slate-300 tracking-tight">New report</h1>
           <div className="flex items-center gap-6">
@@ -131,7 +125,6 @@ const Dashboard = () => {
           </div>
         </div>
 
-        {/* TOP CARDS ROW */}
         <div className="grid grid-cols-12 gap-6 mb-8">
           <div className="col-span-5 bg-white rounded-[32px] p-8 shadow-sm border border-white">
             <div className="text-sm font-bold text-slate-800 mb-2">Revenue</div>
@@ -180,10 +173,7 @@ const Dashboard = () => {
           </div>
         </div>
 
-        {/* BOTTOM MAIN GRID */}
         <div className="grid grid-cols-12 gap-8 items-start">
-          
-          {/* LEFT: REFERRER & PLATFORM VALUE */}
           <div className="col-span-3 space-y-6">
             <div className="bg-white rounded-[32px] p-6 border border-white shadow-sm">
               <div className="flex justify-between mb-6 text-gray-300"><Menu size={18} /><Filter size={18} /></div>
@@ -215,7 +205,6 @@ const Dashboard = () => {
             </div>
           </div>
 
-          {/* MIDDLE: BAR CHART */}
           <div className="col-span-5 bg-white rounded-[32px] p-8 shadow-sm border border-white h-full">
             <div className="flex justify-between mb-8"><BarChart3 size={20} className="text-gray-300" /><Filter size={18} className="text-gray-300" /></div>
             <div className="text-[11px] font-bold text-gray-400 uppercase tracking-widest mb-12">Deals amount <br/> by referrer category</div>
@@ -235,13 +224,11 @@ const Dashboard = () => {
             </div>
           </div>
 
-          {/* RIGHT: EXPANDED PERFORMANCE SECTION */}
           <div className="col-span-4 space-y-4">
              <div className="flex justify-between text-[10px] font-bold text-gray-300 uppercase tracking-widest px-4 mb-4">
                  <span className="w-32">Sales</span><span className="w-20">Revenue</span><span className="w-12 text-center">Leads</span><span>KPI</span><span>W/L</span>
              </div>
              
-             {/* ARMIN ROW */}
              <div className="bg-white rounded-3xl p-4 shadow-sm border border-gray-50 flex items-center justify-between">
                 <div className="flex items-center gap-3 w-32"><Avatar name="AA" color="bg-yellow-400" /><span className="text-xs font-bold text-gray-600 truncate">Armin A.</span></div>
                 <div className="text-xs font-bold text-slate-800 w-20 tracking-tighter">$209,633</div>
@@ -250,7 +237,6 @@ const Dashboard = () => {
                 <div className="flex items-center gap-1.5"><span className="text-[10px] font-bold text-gray-400">31%</span><div className="w-5 h-5 rounded-full bg-pink-500 text-white text-[10px] flex items-center justify-center font-bold">12</div><span className="text-[10px] font-bold text-gray-400">29</span></div>
              </div>
 
-             {/* MIKASA EXPANDED */}
              <div className="bg-gradient-to-b from-white to-pink-50/20 rounded-[40px] p-4 shadow-sm border border-pink-100">
                 <div className="flex items-center justify-between mb-4">
                   <div className="flex items-center gap-3 w-32"><Avatar name="MA" color="bg-cyan-400" /><span className="text-xs font-bold text-gray-600">Mikasa A.</span></div>
@@ -287,7 +273,6 @@ const Dashboard = () => {
                 </div>
              </div>
 
-             {/* EREN ROW */}
              <div className="bg-white rounded-3xl p-4 shadow-sm border border-gray-50 flex items-center justify-between">
                 <div className="flex items-center gap-3 w-32"><Avatar name="EY" color="bg-orange-400" /><span className="text-xs font-bold text-gray-600 truncate">Eren Y.</span></div>
                 <div className="text-xs font-bold text-slate-800 w-20 tracking-tighter">$117,115</div>

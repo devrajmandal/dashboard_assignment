@@ -3,11 +3,9 @@ import { BarChart3, ChevronDown, Filter } from 'lucide-react';
 
 const Bar = ({ height, value, label, active }) => (
   <div className="flex flex-col items-center justify-end h-full gap-3 w-16 relative group">
-    {/* Value Tooltip */}
     <div className={`text-[10px] font-bold text-pink-500 bg-white px-2.5 py-1.5 shadow-md rounded-lg absolute transition-all bottom-full mb-3 whitespace-nowrap ${active ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}>
       {value}
     </div>
-    {/* The Actual Bar */}
     <div className={`w-full rounded-2xl transition-all ${active ? 'bg-slate-200' : 'bg-slate-100 hover:bg-slate-200'} ${height}`}></div>
     <span className="text-[10px] font-bold text-gray-300 uppercase tracking-widest">{label}</span>
   </div>
@@ -24,7 +22,6 @@ const BarChartSection = () => (
     <div className="text-[11px] font-bold text-gray-400 uppercase tracking-widest mb-12">
       Deals amount <br/> by referrer category
     </div>
-    {/* Ensure the container has a fixed height for bars to grow into */}
     <div className="h-48 flex items-end justify-between px-10 pb-4 border-b border-gray-100">
        <Bar height="h-[60px]" value="$6,901" label="Sep" />
        <Bar height="h-[120px]" value="$11,035" label="Oct" active />

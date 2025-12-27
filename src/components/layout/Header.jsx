@@ -4,7 +4,6 @@ import { Avatar } from '../common/UIElements';
 
 const Header = () => (
   <header className="flex items-center justify-between mb-8">
-    {/* Global Search Bar */}
     <div className="flex-1 max-w-xl relative">
       <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-300" size={18} />
       <input 
@@ -14,7 +13,6 @@ const Header = () => (
       />
     </div>
 
-    {/* Top Right Avatar & Action Group */}
     <div className="flex items-center gap-4">
       <div className="flex -space-x-2">
         <Avatar name="AA" color="bg-yellow-400" />
